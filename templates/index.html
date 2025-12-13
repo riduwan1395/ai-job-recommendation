@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Job Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Find work you’ll love, fast.</h1>
+            <p>AI-powered job recommendations based on your skills and experience</p>
+
+            <form method="POST" class="search-box">
+                <input type="text" name="skills" placeholder="Skills (python, excel, sql)" required>
+
+                <select name="education" required>
+                    <option value="">Education</option>
+                    <option value="SSC">SSC</option>
+                    <option value="HSC">HSC</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="BSc">BSc</option>
+                    <option value="MSc">MSc</option>
+                </select>
+
+                <input type="number" name="experience" placeholder="Experience (Years)" min="0" required>
+
+                <button type="submit">Search Jobs</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

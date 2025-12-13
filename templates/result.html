@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <section class="results-page">
+        <div class="results-container">
+            <h1>Recommended Jobs</h1>
+            <p class="subtitle">
+                Based on your profile, these jobs match you best
+            </p>
+
+            <div class="jobs-grid">
+                {% for job in jobs %}
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>{{ job.job_title }}</h3>
+                        <span class="score-badge">
+                            {{ (job.score * 100) | round(1) }}%
+                        </span>
+                    </div>
+
+                    <p class="match-text">AI Match Score</p>
+
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+                {% endfor %}
+            </div>
+
+            <a href="/" class="back-link">← Try Again</a>
+        </div>
+    </section>
+
+</body>
+</html>
